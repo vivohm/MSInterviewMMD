@@ -8,6 +8,7 @@ namespace InterviewQuestionsTest
         [Theory]
         [InlineData("forty thousand two hundred million", 40200000000)]
         [InlineData("one thousand six hundred and forty two", 1642)]
+        [InlineData("", 0)]
         public void Word2Number_Test(string word, long expectedOutput)
         {
             var word2Number = new Word2Number();
