@@ -9,6 +9,30 @@ namespace InterviewQuestion
         static void Main(string[] args)
         {
             Word2Number();
+            ShiftNode();
+            GetMaxCoinFromPuzzel();
+        }
+
+        static void GetMaxCoinFromPuzzel()
+        {
+            Console.Write("Input space seperated n and m value: ");
+            string[] nXm = Console.ReadLine().TrimEnd().Split(' ');
+            int n = Convert.ToInt32(nXm[0]);
+            int m = Convert.ToInt32(nXm[1]);
+            List<List<int>> matrix = new List<List<int>>();
+
+            Console.WriteLine("Input each of seperated by space: ");
+            
+            for (int i = 0; i < m; i++)
+            {
+                matrix.Add(Console.ReadLine().TrimEnd().Split(' ').ToList().Select(queriesTemp => Convert.ToInt32(queriesTemp)).ToList());
+            }
+
+            CoinPuzzle puzzle = new CoinPuzzle();
+            int max = puzzle.GetMaxCoin(matrix);
+            Console.WriteLine($"\nMax coins can be collected: {max} from given matrix");
+            Console.ReadLine();
+
         }
 
         static void Word2Number()
